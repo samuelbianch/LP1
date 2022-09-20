@@ -65,5 +65,7 @@ public class Conta {
 		System.out.println("---------------------------------");
 	}
 	
-	public boolean transfere(Conta destino, )
+	public boolean transfere(Conta destino){
+		return false;
+	}
 }

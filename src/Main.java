@@ -3,18 +3,57 @@ import utils.Teclado;
 public class Main {
 	
 	public static void main(String[] args) {
-		Conta c1 = new Conta();
 		Teclado t = new Teclado();
-		
-		c1.setNome(t.leString("Digite seu nome: "));
-		c1.setBanco(t.leString("Digite o nome do banco: "));
-		c1.setCpf(t.leInt("Digite seu CPF"));
-		c1.depositar(t.leDouble("Quanto deseja depositar: "));
-		
-		c1.consultaConta();
-		
-		Conta.getTotalContas();
+		Pais[] pais = new Pais[10];
+		int resp = 0, i = 0;
+		do  {
+			System.out.println("------------------------------");
+			System.out.println("1 - Cadastrar");
+			System.out.println("2 - Mostrar países");
+			System.out.println("3 - Atualizar");
+			System.out.println("4 - Excluir");
+			System.out.println("5 - Sair");
+			System.out.println("------------------------------");
+			resp = t.leInt("Qual operação deseja fazer?");
+			switch (resp) {
+				case 1:
+					pais[i] = new Pais(
+						t.leString("Digite o código ISO do país: "),
+						t.leString("Digite o nome do país: "),
+						t.leString("Digite a população: "),
+						t.leString("Digite a área do país: ")
+					);
 
+					break;
+				case 2:
+					for (int a=0; a<i; a++) {
+						System.out.println("");
+						System.out.println("----------------------");
+						System.out.println("ID: " + i);
+						pais[a].show();
+					}
+					
+					break;
+				case 3:
+					int id = t.leInt("Digite o ID do país: ");
+
+					pais[id].setIso(t.leString("Digite o código ISO: "));
+					pais[id].setNome(t.leString("Digite o nome: "));
+					pais[id].setPopulacao(t.leString("Digite a população: "));
+					pais[id].setDimensao(t.leString("Digite a área do país: "));
+					break;
+
+				case 4:
+					id = t.leInt("Digite o ID do país: ");
+
+					pais[id] = null;
+					break;
+				case 5:
+					System.exit(0);
+					break;
+			}
+			i++;
+		}while(resp != 5);
 	}
 
 }
