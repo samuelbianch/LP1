@@ -23,14 +23,16 @@ public class Main {
 						t.leString("Digite a população: "),
 						t.leString("Digite a área do país: ")
 					);
-
+					i++;
 					break;
 				case 2:
 					for (int a=0; a<i; a++) {
-						System.out.println("");
-						System.out.println("----------------------");
-						System.out.println("ID: " + i);
-						pais[a].show();
+						if (pais[a] != null) {
+							System.out.println("");
+							System.out.println("----------------------");
+							System.out.println("ID: " + a);
+							pais[a].show();
+						}
 					}
 					
 					break;
@@ -52,7 +54,6 @@ public class Main {
 					System.exit(0);
 					break;
 			}
-			i++;
 		}while(resp != 5);
 	}
 

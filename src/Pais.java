@@ -85,7 +85,7 @@ public class Pais {
     }
 
     public double calcularDensidade(){
-        return Integer.parseInt(this.populacao) / Integer.parseInt(this.dimensao);
+        return (double) Integer.parseInt(this.populacao) / Integer.parseInt(this.dimensao);
     }
 
     public void paisesVizinhosIguais(Pais b){
