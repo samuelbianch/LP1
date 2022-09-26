@@ -1,3 +1,5 @@
+package Pais;
+
 import java.util.Objects;
 
 import utils.Teclado;
