@@ -32,8 +32,23 @@ public class Aluno {
         System.out.println("2 - Ver alunos");
         System.out.println("3 - Atualizar");
         System.out.println("4 - Excluir");
-        System.out.println("5 - Sair");
+        System.out.println("5 - Inserir nota");
+        System.out.println("6 - Sair");
         System.out.println("------------------------------");
+    }
+
+    public double calculaNota(double n1, double n2, double n3, double n4) {
+        return (double) (n1 + n2 + n3 + n4) / 4.0;
+    }
+
+    public void situacao(double media) {
+        if (media >= 6) {
+            System.out.println("Aprovado");
+        } else if (media >= 4) {
+            System.out.println("Prova final");
+        } else {
+            System.out.println("Reprovado");
+        }
     }
     
 }

@@ -26,7 +26,7 @@ public class Main {
                             if (i == 1) {
                                 i = -1;
                             } else {
-                               i = 0; 
+                               i = 0;
                             }
                         }
                     }
@@ -67,6 +67,24 @@ public class Main {
                     break;
 
                 case 5:
+                    
+                    double n1 = t.leDouble("Digite a nota 1: ");
+                    double n2 = t.leDouble("Digite a nota 2: ");
+                    double n3 = t.leDouble("Digite a nota 3: ");
+                    double n4 = t.leDouble("Digite a nota 4: ");
+                    int a = 0;
+                    matricula = t.leInt("Qual a matricula do aluno");
+                    for (int i=0; i<cont; i++){
+                        if (aluno[i].getMatricula() == matricula) {
+                            a = i;
+                            System.out.println("A média deste aluno é: " + aluno[i].calculaNota(n1, n2, n3, n4));
+                            break;
+                        }
+                    }
+
+                    System.out.print("Situação -> "); aluno[a].situacao(aluno[a].calculaNota(n1, n2, n3, n4));
+
+                case 6:
                     System.exit(0);
 
             }
