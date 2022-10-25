@@ -1,3 +1,5 @@
+package Pessoa;
+
 import java.util.Scanner;
 
 public class Pessoa {
@@ -14,7 +16,12 @@ public class Pessoa {
         nome = in.nextLine();
         System.out.print("Digite um CPF: ");
         cpf = in.nextInt();
-    } 
+    }
+
+    @Override
+    public String toString(){
+        return nome + " | " + cpf;
+    }
     
 }
 
