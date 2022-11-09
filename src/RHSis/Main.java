@@ -19,18 +19,30 @@ public class Main {
 			resp = t.leInt("Qual operação deseja fazer?");
 			switch (resp) {
 				case 1:
-                    f[quant] = new Funcionario(
-                        t.leString("Nome: "),
-                        t.leString("Tipo (N1 ou N2): "),
-                        t.leDouble("Salario base: "),
-                        quant
-                    );
-
-                    quant++;
-					
+					if (quant == 0 ){
+						f[quant] = new Funcionario(
+							t.leString("Nome: "),
+							t.leString("Tipo (N1 ou N2): "),
+							t.leDouble("Salario base: "),
+							quant
+                    	);
+						quant++;
+					} else {
+						for(int i=0; i<f.length; i++){
+							if (f[i] == null){
+								f[i] = new Funcionario(
+									t.leString("Nome: "),
+									t.leString("Tipo (N1 ou N2): "),
+									t.leDouble("Salario base: "),
+									i
+								);
+								break;
+							}
+						}
+					}					
 					break;
 				case 2:
-					for(int i=0; i<quant; i++){
+					for(int i=0; i<f.length; i++){
 						if(f[i] != null){
 							System.out.println("");
 							System.out.println("----------------------");
