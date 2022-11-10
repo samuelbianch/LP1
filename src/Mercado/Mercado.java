@@ -2,13 +2,14 @@ package Mercado;
 
 import utils.Teclado;
 
-public class Mercado {
+public class Mercado_Backup {
 
     public static void main (String[] args){
         Teclado t = new Teclado();
         int escolha = 0;
-        Produto p;
-        Pedido pedido = new Pedido();
+        Produto[] p = new Produto[30];
+        // Fazer o cadastrar pedido parecido com o do produto
+        Pedido[] pedido = new Pedido[30];
         int quantidade_produto = 0;
         int quantidade_pedido = 0;
 
@@ -23,31 +24,31 @@ public class Mercado {
     
         switch(escolha){
             case 1:
-                p = new Produto(
-                    t.leString("Nome: "),
-                    t.leDouble("Digite o preco: "),
-                    t.leInt("Digite a quantidade em estoque")
-                );
-                p.adicionaProduto(p);
+                if(quantidade_produto == 0 ){
+                    p[quantidade_produto] = new Produto(
+                        t.leString("Nome: "),
+                        t.leDouble("Digite o preco: "),
+                        t.leInt("Digite a quantidade em estoque")
+                    );
+                }else {
+                    for(int i=0; i<p.length; i++){
+                        if(p[i] == null){
+                            p[quantidade_produto] = new Produto(
+                                t.leString("Nome: "),
+                                t.leDouble("Digite o preco: "),
+                                t.leInt("Digite a quantidade em estoque")
+                            );
+                            break;
+                        }
+                    }
+                }
+                quantidade_produto++;
                 break;
             
             case 2:
-                do{
-                    int b = t.leInt("Digite o id do produto que deseja adicionar (para sair '-1')");
-                    
-                    pedido.adicionaProdutoNaCompra();
-                }while(b =! -1);
+                
                 
                 break;
-        }
-    }
-    
-
-    public void get_produto(int id){
-        for (int i=0; i<p.length; i++){
-           if ( p[i].id == id){
-            
-           }
         }
     }
 }

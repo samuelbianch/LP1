@@ -1,10 +1,7 @@
 package Mercado;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Produto {
-    List<Produto> produto = new ArrayList<>();
+
     private int id = -1;
     private String nome;
     private double preco;
