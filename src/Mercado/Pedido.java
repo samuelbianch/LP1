@@ -1,24 +1,11 @@
 package Mercado;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Pedido {
 
-    private int id = 0;
+    private static int id = 0;
     private int id_produto;
     private int quantidade_pedido;
     
-
-    public int getId() {
-        return id;
-    }
-
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
 
     public int getId_produto() {
         return id_produto;
@@ -41,7 +28,7 @@ public class Pedido {
 
 
     public Pedido (int id_produto, int quantidade_pedido) {
-        this.id = this.id++;
+        id++;
         this.id_produto = id_produto;
         this.quantidade_pedido = quantidade_pedido;
     }

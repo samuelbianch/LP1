@@ -2,15 +2,12 @@ package Mercado;
 
 public class Item {
 
-    private int id;
+    private static int id;
     private int id_produto;
     private int id_pedido;
 
     public int getId() {
         return id;
-    }
-    public void setId(int id) {
-        this.id = id;
     }
     public int getId_produto() {
         return id_produto;
@@ -25,8 +22,8 @@ public class Item {
         this.id_pedido = id_pedido;
     }
 
-    public Item (int id, int id_produto, int id_pedido){
-        this.id = id;
+    public Item (int id_produto, int id_pedido){
+        id++;
         this.id_produto = id_produto;
         this.id_pedido = id_pedido;
     }

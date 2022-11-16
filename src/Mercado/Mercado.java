@@ -2,7 +2,7 @@ package Mercado;
 
 import utils.Teclado;
 
-public class Mercado_Backup {
+public class Mercado {
 
     public static void main (String[] args){
         Teclado t = new Teclado();
@@ -47,21 +47,40 @@ public class Mercado_Backup {
                 }
                 quantidade_produto++;
                 break;
-            
             case 2:
                 // Faz o pedido de um item
-                if(quantidade_item == 0){
-                    //item[quantidade_item] = new Item(quantidade_item,)
+                for(int i=0; i<p.length; i++){
+                    mostrarProduto(p[i]);
                 }
                 
-                break;
-        }
-    }
+                int id_produto = t.leInt("Qual o id do produto que você deseja?");
 
-    public void mostrarProduto(Produto produto){
+                if (p[id_produto].confereEstoque() == true){
+                    pedido[quantidade_pedido] = new Pedido(
+                        id_produto,
+                        t.leInt("Digite a quantidade desejada do produto")
+                    );
+                    item[quantidade_item] = new Item(
+                        id_produto,
+                        pedido[quantidade_pedido].getId_produto()
+                    );
+                }else {
+                    System.out.println("Produto sem estoque");
+                }
+                break;
+            
+            case 3:
+                int id = t.leInt("Digite o id do produto que deseja excluir do pedido");
+        }
+    
+        
+    }
+    public static void mostrarProduto(Produto produto){
+        System.out.println("-------------------------");
         System.out.println("Id: " + produto.getId());
         System.out.println("Nome: " + produto.getNome());
         System.out.println("Preco: " + produto.getPreco());
         System.out.println("Quantidade Estoque: " + produto.getQuantidadeEstoque());
     }
+    
 }
