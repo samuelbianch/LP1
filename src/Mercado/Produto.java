@@ -42,7 +42,11 @@ public class Produto {
         this.quantidadeEstoque = quantidadeEstoque;
     }
 
-    public void adicionaProduto(Produto produto){
-        this.produto.add(this.id++, produto);
+    public boolean confereEstoque(){
+        if(getQuantidadeEstoque() > 0){
+            return true;
+        }else {
+            return false;
+        }
     }
 }
