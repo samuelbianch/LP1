@@ -2,17 +2,10 @@ package Mercado;
 
 public class Produto {
 
-    private int id = -1;
     private String nome;
     private double preco;
     private int quantidadeEstoque;
-
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
+    private int codigoProduto;
 
     public String getNome() {
         return nome;
@@ -35,11 +28,18 @@ public class Produto {
         this.quantidadeEstoque = quantidadeEstoque;
     }
 
-    public Produto(String nome, double preco, int quantidadeEstoque) {
-        this.id = id++;
+    public int getCodigoProduto() {
+        return codigoProduto;
+    }
+    public void setCodigoProduto(int codigoProduto) {
+        this.codigoProduto = codigoProduto;
+    }
+
+    public Produto(String nome, double preco, int quantidadeEstoque, int codigoProduto) {
         this.nome = nome;
         this.preco = preco;
         this.quantidadeEstoque = quantidadeEstoque;
+        this.codigoProduto = codigoProduto;
     }
 
     public boolean confereEstoque(){
