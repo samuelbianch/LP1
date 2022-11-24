@@ -2,35 +2,25 @@ package Mercado;
 
 public class Pedido {
 
-    private static int id = 0;
-    private int id_produto;
-    private int quantidade_pedido;
-    
+    private Item itens[];
+    private double precoTotal;
 
-    public int getId_produto() {
-        return id_produto;
+    public double getPrecoTotal() {
+        return precoTotal;
     }
 
-
-    public void setId_produto(int id_produto) {
-        this.id_produto = id_produto;
+    public void setPrecoTotal(double precoTotal) {
+        this.precoTotal = precoTotal;
     }
 
-
-    public int getQuantidade_pedido() {
-        return quantidade_pedido;
-    }
-
-
-    public void setQuantidade_pedido(int quantidade_pedido) {
-        this.quantidade_pedido = quantidade_pedido;
-    }
-
-
-    public Pedido (int id_produto, int quantidade_pedido) {
-        id++;
-        this.id_produto = id_produto;
-        this.quantidade_pedido = quantidade_pedido;
+    public void adicionaItem(Item item){
+        
+        for (int i = 0; i < itens.length; i++) {
+            if (itens[i] == null) {
+                itens[i] = item;
+                setPrecoTotal(getPrecoTotal() + itens[i].setPrecoParcial());
+            }
+        }
     }
 
 }

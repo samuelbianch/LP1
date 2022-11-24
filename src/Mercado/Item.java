@@ -2,29 +2,33 @@ package Mercado;
 
 public class Item {
 
-    private static int id;
-    private int id_produto;
-    private int id_pedido;
+    private Produto produto;
+    private int quant;
 
-    public int getId() {
-        return id;
-    }
-    public int getId_produto() {
-        return id_produto;
-    }
-    public void setId_produto(int id_produto) {
-        this.id_produto = id_produto;
-    }
-    public int getId_pedido() {
-        return id_pedido;
-    }
-    public void setId_pedido(int id_pedido) {
-        this.id_pedido = id_pedido;
+    public Item(Produto produto, int quant) {
+        this.produto = produto;
+        this.quant = quant;
     }
 
-    public Item (int id_produto, int id_pedido){
-        id++;
-        this.id_produto = id_produto;
-        this.id_pedido = id_pedido;
+    public Produto getProduto() {
+        return produto;
     }
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+    public int getQuant() {
+        return quant;
+    }
+    public void setQuant(int quant) {
+        this.quant = quant;
+    }
+
+    public double setPrecoParcial(){
+        return produto.getPreco() * quant;
+    }
+    
+    public void adicionaProduto(Produto produto){
+        this.produto = produto;
+    }
+    
 }
