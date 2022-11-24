@@ -4,7 +4,7 @@ import utils.Teclado;
 
 public class Mercado {
 
-    public static void main (String[] args){
+    /*public static void main (String[] args){
         Teclado t = new Teclado();
         int escolha = 0;
         Produto[] p = new Produto[30];
@@ -81,6 +81,6 @@ public class Mercado {
         System.out.println("Nome: " + produto.getNome());
         System.out.println("Preco: " + produto.getPreco());
         System.out.println("Quantidade Estoque: " + produto.getQuantidadeEstoque());
-    }
+    }*/
     
 }

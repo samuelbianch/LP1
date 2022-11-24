@@ -30,6 +30,7 @@ public class Main {
                                 t.leInt("Digite a quatidade em estoque: "),
                                 t.leInt("Digite o codigo do produto: ")
                             );
+                            break;
                         }
                     }
                     
@@ -40,14 +41,16 @@ public class Main {
                     int quantidade = t.leInt("Digite a quantidade: ");
                     for (int i = 0; i < produto.length; i++) {
                         if(produto[i].getCodigoProduto() == codigoProduto){
-                            item.adicionaProduto(produto[i]);
+                            item.setProduto(produto[i]);
                             produto[i].setQuantidadeEstoque(-1);
+                            break;
                         }
                     }
                     item.setQuant(quantidade);
                     pedido.adicionaItem(item);
 
                 case 3:
+                    System.out.println(pedido.toString());
             }
         }while(resp != 5);
         

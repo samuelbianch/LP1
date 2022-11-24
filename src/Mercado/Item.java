@@ -26,9 +26,9 @@ public class Item {
     public double setPrecoParcial(){
         return produto.getPreco() * quant;
     }
-    
-    public void adicionaProduto(Produto produto){
-        this.produto = produto;
+
+    public double getPrecoItem() {
+        return quant * produto.getPreco();
     }
     
 }
