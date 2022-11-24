@@ -4,6 +4,15 @@ public class Pedido {
 
     private Item[] itens = new Item[50];
     private double precoTotal;
+    private int cont = 0;
+
+    public int getCont() {
+        return cont;
+    }
+
+    public void setCont(int cont) {
+        this.cont = cont;
+    }
 
     public double getPrecoTotal() {
         return precoTotal;
@@ -19,6 +28,7 @@ public class Pedido {
             if (itens[i] == null) {
                 itens[i] = item;
                 setPrecoTotal(getPrecoTotal() + itens[i].setPrecoParcial());
+                setCont(getCont()+1);
                 break;
             }
         }
