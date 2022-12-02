@@ -1,4 +1,4 @@
-package org.sinergiaanimalbrasil;
+package sinergiaanimalbrasil;
 
 public class Gato extends Animal {
 

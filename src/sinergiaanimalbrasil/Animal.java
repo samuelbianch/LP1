@@ -1,4 +1,4 @@
-package org.sinergiaanimalbrasil;
+package sinergiaanimalbrasil;
 
 public abstract class Animal {
 	private String nome;
