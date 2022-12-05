@@ -69,4 +69,9 @@ public class Conta {
 	public boolean transfere(Conta destino){
 		return false;
 	}
+
+	@Override
+	public String toString() {
+		return "Conta [saldo=" + saldo + ", nome=" + nome + ", banco=" + banco + ", cpf=" + cpf + "]";
+	}
 }

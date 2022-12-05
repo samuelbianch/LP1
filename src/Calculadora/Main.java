@@ -1,7 +1,7 @@
 package Calculadora;
 import java.util.Scanner;
 
-public class MenuCalculadora {
+public class Main {
     
     public static void main(String[] args) {
         int opc = 0;
